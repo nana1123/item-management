@@ -37,7 +37,20 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                        <!-- 削除ボタン -->
+                        <td>        
+                        <from action="{{ url('item/' .$item->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button type="submit" id="delete-item-{{ $item->id }}" class="btn btn-danger">
+                                        <i class="fa fa-btn fa-trash"></i>削除
+                                    </button>
+                        </form>
+                        </td>
                                 </tr>
+
+
                             @endforeach
                         </tbody>
                     </table>
