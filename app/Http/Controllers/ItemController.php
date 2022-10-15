@@ -57,12 +57,11 @@ class ItemController extends Controller
 
         return view('item.add');
     }
-     /**
-     * 商品削除
-     */
-    public function destroy(Request $request, Item $item)
+    
+    //アイテム削除
+    public function destroy(Request $request, item $id)
     {
-        $item->delete();
+        $id->delete();
         return redirect('/items');
     }
 }
